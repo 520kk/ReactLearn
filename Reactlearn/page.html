@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="newfolder/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="newfolder/assets/img/water-icon.png">
+    <title>
+       담수지역 정보 (1/2)
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700"/>
+    <!-- Nucleo Icons -->
+    <link href="newfolder/assets/css/nucleo-icons.css" rel="stylesheet"/>
+    <link href="newfolder/assets/css/nucleo-svg.css" rel="stylesheet"/>
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="newfolder/assets/css/material-dashboard.css" rel="stylesheet"/>
+    <link href="newfolder/css/common.css" rel="stylesheet" type="text/css">
+    <link href="newfolder/css/pyeonglim.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="g-sidenav-show  bg-gray-200">
+<style>
+
+
+
+</style>
+
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
+       id="sidenav-main">
+    <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+           aria-hidden="true" id="iconSidenav"></i>
+        <a class="navbar-brand m-0" href="#" target="_blank">
+            <img src="newfolder/assets/img/water-icon.png" class="navbar-brand-img h-100" alt="main_logo">
+            <span class="ms-1 font-weight-bold text-white">메뉴</span>
+        </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="main.html">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">opacity</i>
+                    </div>
+                    <span class="nav-link-text ms-1">저수량 3D 디스플레이</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white active bg-gradient-info" href="page.html">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">opacity</i>
+                    </div>
+                    <span class="nav-link-text ms-1">현재 저수량 및 댐정보</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white " href="page2.html">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">opacity</i>
+                    </div>
+                    <span class="nav-link-text ms-1">월간 및 연간 저수량</span>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+
+</aside>
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+         navbar-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <h3 class="font-weight-bolder mb-0">메뉴 레이아웃?</h3>
+            </nav>
+        </div>
+
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- 배경화면 -->
+    <div class="container-fluid px-2 px-md-4">
+
+        <div class="page-header min-height-400 border-radius-xl mt-4"
+             style="background-image: url('https://cdn.hkbs.co.kr/news/photo/201910/535960_292837_1950.jpg');">
+
+            <span class="mask opacity-6"></span>
+        </div>
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+
+
+                <div id="hide_bo2" class="buildList">
+                <div class="realtime_dam_info">
+                    <h2 id="title2" class="con_title_icon">평림댐 현황</h2>
+                    <div class="dam_thum_info">
+                        <div class="thum_area">
+                            <img src="newfolder/assets/img/bg1.jpg" alt="사진">
+                            <img src="newfolder/assets/img/bg2.jpg" alt="지도API">
+                        <dl class="txDt fl" style="margin-left:60px; padding-top:10px;">
+                            <dt style="font-weight: 600; font-size:16px; margin-bottom:10px;">저수면적 산정 기준</dt>
+                            <dd>
+                                <ul class="blit01">
+                                    <li>다목적댐은 계획홍수위 기준, 용수댐은 상시만수위 기준</li>
+                                    <li>총저수용량 : 계획홍수위 기준 저수용량</li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        </div>
+
+                        <table class="worksTable thBold tb_oneRow BOInfo" style="display: none;">
+                            <colgroup>
+                                <col class="tbl-col-50">
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="row">시설명</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">유역면적 (km<sup>2</sup>)</th>
+                                <td> km<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">길이 (m)</th>
+                                <td> m</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">높이 (m)</th>
+                                <td> m</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">계획홍수위 (EL.m)</th>
+                                <td> EL.m</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">계획홍수량 (m<sup>3</sup>/s)</th>
+                                <td> m<sup>3</sup>/s</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">상한수위 (EL.m)</th>
+                                <td> EL.m</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">관리수위 (EL.m)</th>
+                                <td> EL.m</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">관리수위저수용량 (백만m<sup>3</sup>)</th>
+                                <td> 백만m<sup>3</sup></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">하한수위 (EL.m)</th>
+                                <td> EL.m</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">하한수위저수용량 (백만m<sup>3</sup>/s)</th>
+                                <td> 백만m<sup>3</sup>/s</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">갈수위 (EL.m)</th>
+                                <td> EL.m</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">하천유지용량 (m<sup>3</sup>/s)</th>
+                                <td> m<sup>3</sup>/s</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">하천유지용량 (고시)</th>
+                                <td></td>
+                            </tr>
+                            </thead>
+                        </table>
+                        <table class="worksTable thBold DAMInfo">
+                            <colgroup>
+                                <col>
+                                <col class="tbl-col-22" span="4">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>구분</th>
+                                <td colspan="4">댐 / 평림천 / E.C.R.D</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">제원</th>
+                                <th>높이 (m)</th>
+                                <th>길이 (m)</th>
+                                <th>정상표고<br>(EL.m)</th>
+                                <th>체적 (천m<sup>3</sup>)</th>
+                            </tr>
+                            <tr>
+                                <td>      37.3</td>
+                                <td>     390.5</td>
+                                <td>     116.0</td>
+                                <td>     892.8</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">유역</th>
+                                <th colspan="2">유역면적 (km<sup>2</sup>)</th>
+                                <th colspan="2">연간용수공급용량 (백만m<sup>3</sup>)</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">      19.9</td>
+                                <td colspan="2">      11.8</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="10">저수지</th>
+                                <th colspan="2">저수면적 (km<sup>2</sup>)</th>
+                                <th colspan="2">계획홍수위 (EL.m)</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">       0.9</td>
+                                <td colspan="2">     111.30</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">상시만수위 (EL.m)</th>
+                                <th colspan="2">홍수기제한수위 (EL.m)</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">     109.70</td>
+                                <td colspan="2">     109.70</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">월류정표고 (EL.m)</th>
+                                <th colspan="2">저수위 (EL.m)</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">     109.70</td>
+                                <td colspan="2">      91.60</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">총 저수용량 (백만m<sup>3</sup>)</th>
+                                <th colspan="2">유효 저수량 (백만m<sup>3</sup>)</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">      10.3</td>
+                                <td colspan="2">       8.1</td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">홍수 조절용량 (백만m<sup>3</sup>)</th>
+                                <th colspan="2">사업기간</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">       0.0</td>
+                                <td colspan="2"> ~ </td>
+                            </tr>
+                            </thead>
+                        </table>
+                            출처: 수자원 공사 K-water
+                    </div>
+
+                <!--
+                여기까지
+                -->
+                    <h2 id="title" class="con_title_icon">평림댐 10분별 현황</h2>
+                    <div class="sch-data-box">
+                        <form id="formtab1" name="damSpcVO" method="post">
+                            <input type="hidden" name="s_mid" value="">
+                            <fieldset>
+                                <legend>현황 검색</legend>
+                                <div class="form-group-box">
+                                    <div class="clearfix">
+                                        <div class="col-md-1">
+                                            <span class="label">구분</span>
+                                        </div>
+                                        <div class="col-md-4">
+													<span class="form-inline">
+														<select name="sCode" title="시간대별 구분 선택" onchange="fnSetSerchDate();">
+															<option value="C" selected="selected">10분별</option>
+															<option value="A">시간별</option>
+															<option value="B">일자별</option>
+														</select>
+														<select name="damcd2" title="댐 구분 선택">
+															<option value="2403201">감포댐</option>
+															<option value="2011602">강정고령보</option>
+															<option value="1007601">강천보</option>
+															<option value="3012601">공주보</option>
+															<option value="1001210">광동댐</option>
+															<option value="2009602">구미보</option>
+															<option value="2503220">구천댐</option>
+															<option value="1021701">군남댐</option>
+															<option value="2008101">군위댐</option>
+															<option value="2010101">김천부항댐</option>
+															<option value="2009601">낙단보</option>
+															<option value="2022510">낙동강하굿둑</option>
+															<option value="2018110">남강댐</option>
+															<option value="1302210">달방댐</option>
+															<option value="2014601">달성보</option>
+															<option value="2201231">대곡댐</option>
+															<option value="2201230">대암댐</option>
+															<option value="3008110">대청댐</option>
+															<option value="3008611">대청조정지</option>
+															<option value="2021110">밀양댐</option>
+															<option value="3012602">백제보</option>
+															<option value="3203110">보령댐</option>
+															<option value="3303110">부안댐</option>
+															<option value="2201220">사연댐</option>
+															<option value="2007601">상주보</option>
+															<option value="2301210">선암댐</option>
+															<option value="4001110">섬진강댐</option>
+															<option value="3010601">세종보</option>
+															<option value="1012110">소양강댐</option>
+															<option value="4105210">수어댐</option>
+															<option value="5004601">승촌보</option>
+															<option value="2101210">안계댐</option>
+															<option value="2001110">안동댐</option>
+															<option value="2001611">안동조정지</option>
+															<option value="1007602">여주보</option>
+															<option value="2503210">연초댐</option>
+															<option value="2012210">영천댐</option>
+															<option value="3001110">용담댐</option>
+															<option value="2021210">운문댐</option>
+															<option value="1007603">이포보</option>
+															<option value="2002110">임하댐</option>
+															<option value="2002610">임하조정지</option>
+															<option value="5101110">장흥댐</option>
+															<option value="4007110">주암댐</option>
+															<option value="4204612">주암역조정지</option>
+															<option value="4104610">주암조절지댐</option>
+															<option value="5004602">죽산보</option>
+															<option value="2017601">창녕함안보</option>
+															<option value="1003110">충주댐</option>
+															<option value="1003611">충주조정지</option>
+															<option value="2011601">칠곡보</option>
+															<option value="5002201">평림댐</option>
+															<option value="1009710">평화의댐</option>
+															<option value="2015110">합천댐</option>
+															<option value="2018611">합천조정지</option>
+															<option value="2014602">합천창녕보</option>
+															<option value="1006110">횡성댐</option>
+															<option value="2002111">성덕댐</option>
+															<option value="2012101">보현산댐</option>
+															<option value="1022701">한탄강댐</option>
+															<option value="2004101">영주댐</option>
+															<option value="5001701">담양홍수조절지</option>
+															<option value="5003701">화순홍수조절지</option>
+
+															<option value="1019901">경인아라뱃길</option>
+															<option value="1024801">귤현보</option>
+														</select>
+													</span>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <span class="label">생산일자</span>
+                                        </div>
+                                        <div class="col-md-5">
+													<span class="input-calender-group">
+														<span class="input-calender">
+                                                            <input type="text" id="startDate1" name="startDate" title="시작날짜 입력(예: 2015-10-10)" class="hasDatepicker">
+                                                            <img class="w3cC" src="newfolder/assets/img/btncal.gif" alt="Calendar" title="Calendar">
+                                                        </span>
+
+														<span class="mobileOff">&nbsp; ~ </span>
+
+														<span class="input-calender">
+															<input type="text" id="endDate1" name="endDate" title="끝 날짜 입력(예: 2015-10-10)" style="width:147px !important" class="hasDatepicker">
+                                                            <img class="w3cC" src="newfolder/assets/img/btncal.gif" alt="Calendar" title="Calendar">
+
+                                                        </span>
+													</span>
+                                        </div>
+                                    </div>
+                                    <a class="btn icon-search btn-sch" href="javascript:getSearchTab1('');">
+                                        검색
+                                    </a>
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+
+
+            </div>
+         </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="footer py-4  ">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+                <div class="col-lg-6 mb-lg-0 mb-4">
+                    <div class="copyright text-center text-sm text-muted text-lg-start">
+                        <br>
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        ,
+                        <a> Project made by</a>
+                        김강훈, 최낙현, 황인성, 최석재, 정세빈
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+</main>
+
+<!--   Core JS Files   -->
+<script src="newfolder/assets/js/core/popper.min.js"></script>
+<script src="newfolder/assets/js/core/bootstrap.min.js"></script>
+<script src="newfolder/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="newfolder/assets/js/plugins/smooth-scrollbar.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="newfolder/assets/js/plugins/chartjs.min.js"></script>
+
+<script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+            damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+</script>
+
+<!-- Github buttons -->
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="newfolder/assets/js/material-dashboard.min.js?v=3.0.2"></script>
+<script>
+    function predict() {
+        $.ajax({
+            url: 'http://127.0.0.1:5000/predict',
+            type: 'POST',
+            data: {'name': 13579},
+            dataType: "json",
+            success: function () {
+                console.log('hihi')
+
+            },
+            error: function () {
+                console.log('error');
+            }
+        })
+    }
+
+</script>
+
+<script src="newfolder/assets/js/core/popper.min.js"></script>
+<script src="newfolder/assets/js/core/bootstrap.min.js"></script>
+<script src="newfolder/assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="newfolder/assets/js/plugins/smooth-scrollbar.min.js"></script>
+<script src="newfolder/assets/js/plugins/chartjs.min.js"></script>
+<script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+<!-- CSS Files -->
+<link id="pagestyle" href="newfolder/assets/css/material-dashboard.css?v=3.0.2" rel="stylesheet"/>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="http://dreamplan7.cafe24.com/canvas2/js/three.js"></script>
+<script src="http://dreamplan7.cafe24.com/canvas2/js/OrbitControls.js"></script>
+<script src="http://dreamplan7.cafe24.com/canvas2/js/ColladaLoader.js"></script>
+<script src="http://dreamplan7.cafe24.com/canvas2/js/Sky.js"></script>
+<script src="http://dreamplan7.cafe24.com/canvas2/js/Water.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.js"
+        integrity="sha512-Mcz+Mt8k23j06ycA5EJGfyXbtzB6xqEoJxjGftQQoed/zQzem9Lt21LRymjlcm+NUsbF0LOHgfdN8LO8GtKDOw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+            damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+</script>
+</body>
+</html>

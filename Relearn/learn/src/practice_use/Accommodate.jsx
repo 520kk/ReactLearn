@@ -7,7 +7,7 @@ function Accommodate(props) {
     const [isFull, setIsFull] = useState(false);
     const [count, increaseCount, decreaseCount] = useCounter(0);
     //의존성 배열이 있는 형태
-    // 카운트값이 바뀔때마다 호출됨
+    // 카운트값이 바뀔때마다 호출됨.
     useEffect(() => {
         console.log("======================");
         console.log("useEffect() is called.");
@@ -15,7 +15,7 @@ function Accommodate(props) {
     });
 
     //의존성 배열이 없는 형태
-    //Component가 update될때 마다 호출됨
+    //Component가 update될때 마다 호출됨.
     useEffect(() => {
         setIsFull(count >= MAX_CAPACITY);
         console.log(`Current count value: ${count}`);

@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import Clock from "./pages/Clock";
 import CommentList from "./web/CommentList";
 import NotificationList from "./practice_state/NotificationList";
+import Accommodate from "./practice_use/Accommodate";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <NotificationList />
+    <Accommodate />
   </React.StrictMode>
 );
 

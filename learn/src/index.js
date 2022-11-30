@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Accommodate from "./practice_use/Accommodate" ;
+import LandingPage from "./practice_login/LandingPage";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    < Accommodate />
+    < LandingPage />
   </React.StrictMode>
 );
 
